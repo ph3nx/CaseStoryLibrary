@@ -1,0 +1,53 @@
+<%= form_for(@casestory) do |f| %>
+  <% if @casestory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@casestory.errors.count, "error") %> prohibited this casestory from being saved:</h2>
+
+      <ul>
+      <% @casestory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :header %><br>
+    <%= f.text_field :header %>
+  </div>
+  <div class="field">
+    <%= f.label :segname %><br>
+    <%= f.text_field :segname %>
+  </div>
+  <div class="field">
+    <%= f.label :custname %><br>
+    <%= f.text_field :custname %>
+  </div>
+  <div class="field">
+    <%= f.label :countryname %><br>
+    <%= f.text_field :countryname %>
+  </div>
+  <div class="field">
+    <%= f.label :segurl %><br>
+    <%= f.text_field :segurl %>
+  </div>
+  <div class="field">
+    <%= f.label :custurl %><br>
+    <%= f.text_field :custurl %>
+  </div>
+  <div class="field">
+    <%= f.label :countryurl %><br>
+    <%= f.text_field :countryurl %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :imgurl %><br>
+    <%= f.text_field :imgurl %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

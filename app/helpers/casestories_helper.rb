@@ -1,0 +1,2 @@
+module CasestoriesHelper
+end

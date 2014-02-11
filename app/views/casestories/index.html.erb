@@ -1,0 +1,47 @@
+<%= image_tag "blur.jpg", class: 'blur' %>
+<header class="header-main">
+	<%= image_tag 'banner.jpg' %>
+</header>
+
+<% @casestories.each do |casestory| %>
+<article class="cs">
+	<header>
+		<h1><%= casestory.header %></h1>
+	</header>
+
+	<div class="cf">
+
+	<p class="float"><%= casestory.content %></p>
+  <img src="<%= casestory.imgurl %>" class="float" width="234" height="128">
+    
+	</div>
+
+	<footer class="filters cf">
+		<div>
+			<h2>Market Segment</h2>
+			<p><%= casestory.segname %></p>
+			<img src="<%= casestory.segurl %>">
+		</div>
+		<div>
+			<h2>Customer</h2>
+			<p><%= casestory.custname %></p>
+			<img src="<%= casestory.custurl %>">
+		</div>
+		<div>
+			<h2>Country</h2>
+			<p><%= casestory.countryname %></p>
+			<img src="<%= casestory.countryurl %>">
+		</div>
+	</footer>
+  <%= link_to 'Show', casestory %>
+  <%= link_to 'Edit', edit_casestory_path(casestory) %>
+  <%= link_to 'Destroy', casestory, method: :delete, data: { confirm: 'Are you sure?' } %>
+</article>
+<% end %>
+
+<footer class="main-footer">
+  <%= link_to 'Trelleborg' %>
+</footer>
+  
+
+<%= link_to 'New Casestory', new_casestory_path %>
